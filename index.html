@@ -11,16 +11,16 @@
 <body class="bg-base-200 min-h-screen flex flex-col">
 
   <!-- 1. ナビバー -->
-  <header class="navbar bg-base-100 shadow-md sticky top-0 z-50 px-4 sm:px-8">
+  <header class="navbar bg-base-100 shadow-md sticky top-0 z-50 px-2 sm:px-8">
     <div class="flex-1">
-      <a href="#" class="btn btn-ghost text-xl font-bold">Harumaki</a>
+      <a href="#" class="btn btn-ghost text-lg sm:text-xl font-bold px-2 sm:px-4">Harumaki</a>
     </div>
     <div class="flex-none">
-      <ul class="menu menu-horizontal px-1 gap-1 text-sm font-medium">
-        <li><a href="#about">ひとこと</a></li>
-        <li><a href="#likes">好きなもの</a></li>
-        <li><a href="#learning">学んでいること</a></li>
-        <li><a href="#works">作ってきたもの</a></li>
+      <ul class="menu menu-horizontal px-0 sm:px-1 gap-0 sm:gap-1 text-xs sm:text-sm font-medium">
+        <li><a href="#about" class="px-1.5 sm:px-3">ひとこと</a></li>
+        <li><a href="#likes" class="px-1.5 sm:px-3">好きなもの</a></li>
+        <li><a href="#learning" class="px-1.5 sm:px-3">学ぶこと</a></li>
+        <li><a href="#works" class="px-1.5 sm:px-3">作ったもの</a></li>
       </ul>
     </div>
   </header>
@@ -42,6 +42,10 @@
             <p class="text-sm opacity-70">Webプログラミング学習中</p>
             <div class="divider">ひとこと</div>
             <p class="text-xl font-medium text-primary">「よろしくお願いします！」</p>
+            <!-- 「もっと見る」ボタン（押すと趣味の段落を表示/非表示） -->
+            <button id="toggle-hobby-btn" type="button" class="btn btn-outline btn-primary btn-sm mt-3">もっと見る</button>
+            <!-- 初期状態では隠しておく「趣味」の段落 -->
+            <p id="hobby-text" class="text-sm mt-3 max-w-md hidden">趣味：休日はゲームをしたり、スイーツを食べ歩いたり、風景写真を撮ったりしてリフレッシュしています。</p>
           </div>
         </div>
       </div>
@@ -126,5 +130,14 @@
     </aside>
   </footer>
 
+  <script>
+    const toggleBtn = document.getElementById('toggle-hobby-btn'); // 「もっと見る」ボタン要素を取得する
+    const hobbyText = document.getElementById('hobby-text'); // 「趣味」の段落要素を取得する
+
+    toggleBtn.addEventListener('click', () => { // ボタンがクリックされたときの処理を登録する
+      const isHidden = hobbyText.classList.toggle('hidden'); // hiddenクラスの付け外しをして現在の非表示状態を取得する
+      toggleBtn.textContent = isHidden ? 'もっと見る' : '閉じる'; // 非表示なら「もっと見る」、表示中なら「閉じる」にラベルを切り替える
+    });
+  </script>
 </body>
 </html>
