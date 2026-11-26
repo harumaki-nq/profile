@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="cupcake">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロフィール - Harumaki</title>
+  <!-- Tailwind CSS & daisyUI v5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/daisyui.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-base-200 min-h-screen flex flex-col">
+
+  <!-- 1. ナビバー -->
+  <header class="navbar bg-base-100 shadow-md sticky top-0 z-50 px-2 sm:px-8">
+    <div class="flex-1">
+      <a href="#" class="btn btn-ghost text-lg sm:text-xl font-bold px-2 sm:px-4">Harumaki</a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-0 sm:px-1 gap-0 sm:gap-1 text-xs sm:text-sm font-medium">
+        <li><a href="#about" class="px-1.5 sm:px-3">ひとこと</a></li>
+        <li><a href="#likes" class="px-1.5 sm:px-3">好きなもの</a></li>
+        <li><a href="#learning" class="px-1.5 sm:px-3">学ぶこと</a></li>
+        <li><a href="#works" class="px-1.5 sm:px-3">作ったもの</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="flex-grow container mx-auto max-w-4xl px-4 py-8 space-y-12">
+
+    <!-- セクション1: ひとこと（Auraコンポーネントで強調） -->
+    <section id="about">
+      <div class="aura">
+        <div class="hero bg-base-100 rounded-box p-8">
+          <div class="hero-content text-center flex-col">
+            <div class="avatar placeholder mb-2">
+              <div class="bg-primary text-primary-content rounded-full w-24">
+                <span class="text-3xl font-bold">H</span>
+              </div>
+            </div>
+            <h1 class="text-3xl font-bold">Harumaki</h1>
+            <p class="text-sm opacity-70">Webプログラミング学習中</p>
+            <div class="divider">ひとこと</div>
+            <p class="text-xl font-medium text-primary">「よろしくお願いします！」</p>
+            <!-- 「もっと見る」ボタン（押すと趣味の段落を表示/非表示） -->
+            <button id="toggle-hobby-btn" type="button" class="btn btn-outline btn-primary btn-sm mt-3">もっと見る</button>
+            <!-- 初期状態では隠しておく「趣味」の段落 -->
+            <p id="hobby-text" class="text-sm mt-3 max-w-md hidden">趣味：休日はゲームをしたり、スイーツを食べ歩いたり、風景写真を撮ったりしてリフレッシュしています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- セクション2: 好きなもの -->
+    <section id="likes">
+      <h2 class="text-2xl font-bold text-center mb-6">❤️ 好きなもの</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
+          <div class="card-body items-center text-center">
+            <div class="text-4xl mb-2">🎮</div>
+            <h3 class="card-title">ゲーム</h3>
+            <p class="text-sm">様々なジャンルのゲームを遊ぶのが好きで、休日によく没頭しています。</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
+          <div class="card-body items-center text-center">
+            <div class="text-4xl mb-2">🍰</div>
+            <h3 class="card-title">甘いもの</h3>
+            <p class="text-sm">美味しいスイーツを食べ歩いたり、自分で作ってみたりして楽しんでいます。</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
+          <div class="card-body items-center text-center">
+            <div class="text-4xl mb-2">📷</div>
+            <h3 class="card-title">風景写真</h3>
+            <p class="text-sm">散歩中や旅行先で綺麗だなと思った街並みや自然を写真に収めています。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- セクション3: 最近学んでいること -->
+    <section id="learning">
+      <h2 class="text-2xl font-bold text-center mb-6">📖 最近学んでいること</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="card bg-base-100 shadow-md border-l-4 border-primary">
+          <div class="card-body">
+            <h3 class="card-title text-primary">ITパスポートの資格勉強</h3>
+            <p class="text-sm">ITに関する基礎的な知識や、ビジネス全般における活用方法について学んでいます。</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-md border-l-4 border-secondary">
+          <div class="card-body">
+            <h3 class="card-title text-secondary">料理</h3>
+            <p class="text-sm">手軽に作れる日常の自炊レシピから、少し凝ったメニューまで挑戦中です。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- セクション4: この授業で作ったもの（Auraコンポーネントで強調） -->
+    <section id="works">
+      <h2 class="text-2xl font-bold text-center mb-6">🛠️ この授業で作ったもの</h2>
+      <div class="aura">
+        <div class="card bg-base-100">
+          <div class="card-body">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <h3 class="card-title">daisyUI のプロフィールカード</h3>
+              <span class="badge badge-accent">第5回</span>
+            </div>
+            <p class="text-sm mt-2">daisyUI の各種コンポーネント（Avatar, Badge, Cardなど）を組み合わせて作成した単体プロフィールカードです。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 4. フッター -->
+  <footer class="footer footer-center p-6 bg-base-100 text-base-content border-t border-base-300 mt-12">
+    <aside>
+      <p>© Harumaki 2026</p>
+    </aside>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-hobby-btn'); // 「もっと見る」ボタン要素を取得する
+    const hobbyText = document.getElementById('hobby-text'); // 「趣味」の段落要素を取得する
+
+    toggleBtn.addEventListener('click', () => { // ボタンがクリックされたときの処理を登録する
+      const isHidden = hobbyText.classList.toggle('hidden'); // hiddenクラスの付け外しをして現在の非表示状態を取得する
+      toggleBtn.textContent = isHidden ? 'もっと見る' : '閉じる'; // 非表示なら「もっと見る」、表示中なら「閉じる」にラベルを切り替える
+    });
+  </script>
+</body>
+</html>
